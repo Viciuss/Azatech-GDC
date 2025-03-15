@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="geral">
+        <div class="registro">
+            <div class="a">
+                <select name="selector" id="selectDia">
+                    <option value="14-03">14-03</option>
+                </select>
+                <button>Pesq</button>
+            </div>
+            <div class="regAlug" id="alug">
+                <table class="alug">
+                    <thead>
+                        <tr>
+                            <th>Checkbox</th>
+                            <th>Nome</th>
+                            <th>Quantidade</th>
+                        </tr>
+                    </thead>
+                        <tbody id="tabela">
+                            <tr>
+                                <td><input type="checkbox" name="devolveu" id="devolveu"></td>
+                                <td><p>Placeholder Brabo</p></td>
+                                <td>20</td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="centro">
+            <div class="barraPesq">
+                <input type="text" name="pesquisa" id="pesquisae" placeholder="Pesquisar">
+                <button id="pesquis">Pesquisar</button>
+            </div>
+            <div id="histDia">
+                <select name="histDia" id="">
+                    <option value="14-03">14-03</option>
+                </select>
+                <button>Pesq</button>
+            </div>
+            <div class="historico">
+                
+            </div>
+        </div>
+        <div class="erp">
+            <div class="dados">
+                <div>
+                    <img class="foto" src="imgs/imgPlaceholder.png" alt="fotoProfessor">
+                </div>
+                <div class="info">
+                    <h2 class="profName">Nome do buxa</h2>
+                    <h2 class="registroProf">0000000-01</h2>
+                </div>
+            </div>
+            <div class="functions">
+                <button>Relatar problema em chromebook</button>
+                <button>Alugar chromebooks</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

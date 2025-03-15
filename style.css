@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+}
+
+body,html{
+    background-image: linear-gradient(to right, rgb(10, 124, 10), rgb(95, 1, 95), rgb(66, 66, 236)) ;
+    height: 100%;
+}
+.geral{
+    display: flex;
+    flex-direction:row ;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+
+}
+.geral div{
+    background-color: whitesmoke;
+    margin: 2%;
+    border-radius: 25px;
+}
+.centro{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.barraPesq{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    gap: 5%;
+    height: 7%;
+}
+.barraPesq input{
+    width: 85%;
+    border-radius: 20px;
+}
+.barraPesq button{
+    width: 15%;
+    height: 100%;
+    border-radius:20px;
+}
+
+
+.historico{
+    border: 2px solid black;
+
+    height: 100%;
+}
+
+.geral .erp, .geral .registro{
+    width: 25%;
+}
+
+.erp{
+    display: flex;
+    flex-direction: column;
+
+
+    text-align: center;
+    justify-content: space-between;
+}
+.erp .dados{
+    border: 2px solid black;
+}
+
+.erp .functions{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    justify-content: space-between;
+    height: 25%;
+
+}
+.functions button{
+    background-color: purple;
+    color: antiquewhite;
+    height: 45%;
+    border-radius: 20px;
+
+}
+
+.foto{
+    height: 200px;
+    background-color: lightgrey;
+    border-radius: 50%;
+}
+
+.registro{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+::-webkit-scrollbar{
+    background-color: black;
+    width: 5px;
+    
+    border-top-right-radius: 25px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: whitesmoke;
+}
+
+
+.registro .a{
+    margin: 5px;
+}
+.a select, .a button{
+    border-radius: 20px;
+}
+
+
+.regAlug{
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    
+    height: fit-content;
+    border: 2px solid blue;
+}
+.regAlug div{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    align-items: center;
+    border: 2px solid red;
+    width: 80%;
+}
