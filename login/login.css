@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+}
+
+body,html{
+    background-color: rgb(140, 10, 140);
+    height: 100%;
+    align-items: center;
+}
+.geral{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+
+.centro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color:whitesmoke;
+    margin: 2%;
+    border-radius: 25px;
+    height: 80%;
+    width: 25%;
+    padding: 0 5% ;
+    box-shadow: 15px 20px 20px black ;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    height: 10%;
+    width: 100%;
+    border: 0 none;
+}
+.inputs input{
+    border: 0 none;
+    height: 100%;
+    width: 100%;
+    border-bottom: 2px solid purple;
+    background-color: whitesmoke;
+    transition-duration: 300ms;
+    padding: 10px;
+    
+}
+
+
+.inputs input:focus{
+    background-color: rgba(128, 0, 128, 0.473);
+    transform: scale(1.1);
+    transition-duration: 300ms;
+    border: 0 none;
+    box-shadow: 5px 7px 5px black ;
+    text-decoration: none;
+}
+.inputs input:focus + label{
+    translate: 0 -65px;
+    color:purple;
+    transition-duration:300ms ;
+    opacity: 100%;
+    animation-fill-mode: forwards;
+}
+.inputs input:not(:placeholder-shown){
+    background-color: rgba(128, 0, 128, 0.473);
+    transform: scale(1.1);
+    box-shadow: 5px 7px 5px black ;
+}
+
+.inputs input:not(:placeholder-shown) + label {
+    translate: 0 -65px;
+    color:purple;
+    opacity: 100%;
+}
+
+.inputs label{
+    opacity: 50%;
+    align-self:flex-start;
+    z-index: 99;
+    translate: 20px -30px;
+    background-color: whitesmoke;
+    padding: 1px;
+    pointer-events: none;
+    transition-duration: 300ms;
+}
+.inputs a{
+    text-decoration:none;
+    align-self: right;
+    font-size: 13px;
+}
+
+.centro button{
+    background-color: whitesmoke;
+    border: 2px solid purple;
+    padding: 10px 50px;
+    color: purple;
+    height: 10%;
+    width: 100%;
+    border-radius: 20px;
+    transition-duration: 200ms;
+}
+
+.centro button:hover{
+    background-color: purple;
+    color: whitesmoke;
+    border: 0 none;
+    box-shadow: 2.5px 5px 5px black ;
+    transform: scale(1.1);
+}
+.centro button:active{
+    transform: scale(1);
+}
