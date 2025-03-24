@@ -1,23 +1,27 @@
 *{
     margin: 0;
+    padding: 0;
 }
+
 html,body{
-    background-color: rgb(140, 10, 140);
+    background-color: purple;
+    width: 100%;
     height: 100%;
-    align-items: center;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
 }
 
-
-.formBrabo{
+.geral{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
     height: 100%;
-
 }
-.itens{
+
+.centro{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,9 +29,9 @@ html,body{
     background-color:whitesmoke;
     margin: 2%;
     border-radius: 25px;
-    height: 100%;
-    width: 100%;
-    padding: 15% 30% ;
+    height: 80%;
+    width: 25%;
+    padding: 0 5% ;
     box-shadow: 15px 20px 20px black ;
 }
 
@@ -36,22 +40,26 @@ html,body{
     flex-direction: column;
     height: 10%;
     width: 100%;
-    align-items: center;
-    justify-content: space-between;
+    border: 0 none;
 }
-
 .inputs input{
-    border: 2px solid black;
+    border: 0 none;
     height: 100%;
     width: 100%;
-    border-radius: 20px;
+    border-bottom: 2px solid purple;
+    background-color: whitesmoke;
     transition-duration: 300ms;
     padding: 10px;
     
 }
-
-.inputs button{
-    border-radius: 20px;
+.centro button{
+    background-color: whitesmoke;
+    border: 2px solid purple;
+    padding: 10px 50px;
+    color: purple;
+    height: 10%;
     width: 100%;
-    padding: 10px;
+    border-radius: 20px;
+    transition-duration: 200ms;
 }
+

@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alugar chromebook</title>
-    <link rel="stylesheet" href="require.css">
+    <link rel="stylesheet" href="../login/login.css">
 </head>
 <body>
-    <div class="formBrabo">
-        <form action="">
-            <div class="itens">
-                <h2>Solicitar chromebooks</h2>
-                <div class="inputs">
-                    <label for="quantidade">Quantidade de chromebooks:</label>
-                    <input name="quantidade" type="text">
-                    <label for="sala">Sala em que serão utilizados:</label>
-                    <input name="sala" type="text">
-                    <label for="carrinho">Carrinho/número dos chromebooks:</label>
-                    <input name="carrinho" type="text">
-                    <button>Enviar</button>
-                </div>
+    <div class="geral">
+        <form class="centro" action="" method="post">
+            <h1>Alugar Chromebooks</h1>
+            <div class="inputs">
+                <input type="text" name="nomeP" placeholder=" ">
+                <label for="nomeP" class="label"> Digite seu nome </label>    
             </div>
+            <div class="inputs">
+            <input type="text" name="quant" placeholder=" ">
+            <label for="senha" class="label"> Digite sua a quantidade de chromebooks</label>
+            </div>
+            <div class="inputs">
+                <input type="text" name="sala" id="" placeholder=" ">
+                <label for="sala">Sala em que serão utilizados</label>
+            </div>
+
+            <button name="submit" value="submit" >Enviar pedido</button>
         </form>
     </div>
+
+    </form>
 </body>
 </html>
