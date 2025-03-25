@@ -10,10 +10,10 @@
             $hora = date("H:i:s");
             $horaDevo = 0;
 
-            $sql = "INSERT INTO `registros`(`id`, `nomeProf`, `horaDevo`, `horaRet`, `quantidade`, `data`, `devolvidoStat`) VALUES ('','$nomeDoBuxa','$horaDevo','$hora','$quantidade','$data','0')";
+            $sql = "INSERT INTO `registros`(`id`, `data`, `nomeProf`, `quantidade`, `horaRet`, `horaDevo`, `devolvidoStat`)VALUES ('','$data','$nomeDoBuxa','$quantidade','$hora','$horaDevo','0')";
 
             if ($conexao->query($sql) === TRUE) {
-                echo "New record created successfully";
+                header("Location: ../index.php");
             } else {
                 echo "Error: " . $sql . "<br>" . $conexao->error;
             }

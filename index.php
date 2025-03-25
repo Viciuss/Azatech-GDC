@@ -12,9 +12,7 @@ if((!isset($_SESSION['cpf']) == true) and (!isset($_SESSION['senha']) == true)){
 $sql ="SELECT * FROM registros WHERE 1";
 $result = $conexao->query($sql);
 
-$dados = mysqli_fetch_assoc($result);
-
-$result -> data_seek(0);
+$pendencia = false;
 
 ?>
 
@@ -32,11 +30,7 @@ $result -> data_seek(0);
             <div class="a">
                 <select name="selector" id="selectDia">
                 <?php
-                        while($diaD = $result->fetch_assoc()){
-                            echo "<option value='". date("d-m",strtotime($diaD['data'])). "'>".
-                            date("d-m",strtotime($diaD['data']))."</option>";
-                        }
-                        $result->data_seek(0);
+
                     ?>
                 </select>
                 <button id="regPesq">Pesq</button>
@@ -83,21 +77,29 @@ $result -> data_seek(0);
                         <tr>
                             <th>Data</th>
                             <th>Hora de retirada</th>
+                            <th>Devolvido?</th>
                             <th>Hora da Devolução</th>
                             <th>Professor</th>
-                            <th>Carrinho/Quantidade</th>
+                            <th>Quantidade</th>
                         </tr>
                     </thead>
                     <tbody id="histTable">
                         <?php
                             while($dadosLinha = mysqli_fetch_assoc($result)){
+                                $devolvidoStat = $dadosLinha['devolvidoStat'] == 0 ? "Não" : "Sim";
                                 echo "<tr>";
                                     echo "<td>". date("d-m",strtotime($dadosLinha["data"])) ."</td>";
                                     echo "<td>". $dadosLinha['horaRet'] ."</td>";
+                                    echo "<td>". $devolvidoStat."</td>";
                                     echo "<td>".$dadosLinha['horaDevo']."</td>";
                                     echo "<td>".$dadosLinha['nomeProf']."</td>";
                                     echo "<td>".$dadosLinha['quantidade']."</td>";
                                 echo "</tr>";
+                                if($dadosLinha['nomeProf'] == $_SESSION['nome'] && $dadosLinha['devolvidoStat'] == 0){
+                                    $pendDia = date("d-m",strtotime($dadosLinha["data"]));
+                                    $pendencia = true;
+                                    $pendQuant = $dadosLinha['quantidade'];
+                                }
                             }
                         ?>
                     </tbody>
@@ -114,18 +116,18 @@ $result -> data_seek(0);
                     <h2 class="registroProf"><?php echo $_SESSION['cpf']?></h2>
                 </div>
                             <?php
-                                if ($dados['nomeProf'] == $_SESSION['nome'] && $dados['devolvidoStat'] == 0){
-                                    echo "<div class='chrAlug' style='background-color: whitesmoke;'>";
-                                    echo "<h4 class='pendencia'> No dia ". date("d-m",strtotime($dados['data'])). " ficaram pendentes ". $dados['quantidade']. " chromebooks" . "</h4>" . "<br>";
-                                    echo "<a href='./login/redef.html'> Em caso de erros relate aqui </a>";
-                                    echo "</div>";
-                                }
+                                    if ($pendencia == true){
+                                        echo "<div class='chrAlug' style='background-color: whitesmoke;'>";
+                                        echo "<h4 class='pendencia'> No dia ". $pendDia. " ficaram pendentes ". $pendQuant. " chromebooks" . "</h4>" . "<br>";
+                                        echo "<a href='./login/redef.html'> Em caso de erros relate aqui </a>";
+                                        echo "</div>";
+                                    }
                             ?>
             </div>
             <div class="functions">
                 <button >Relatar problema em chromebook</button>
                 <?php
-                if($dados['nomeProf'] == $_SESSION['nome'] && $dados['devolvidoStat'] == 0){
+                if($pendencia == true){
                     echo "<button>Devolver chromebook</button>";
                 }
                 ?>
