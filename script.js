@@ -1,5 +1,11 @@
-const btn2 = document.querySelector("#update")
+const alugChr = document.querySelector("#require")
+const sair = document.querySelector("#sairDeFininho")
 
-btn2.addEventListener("click", () => {
-    console.log("Button 2 clicked")
-    })
+alugChr.addEventListener("click", () =>{
+    window.location.href = "require/requisição.php"
+})
+
+
+sair.addEventListener("click", ()=>{
+    window.location.href = "quit.php"
+})

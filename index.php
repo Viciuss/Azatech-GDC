@@ -12,13 +12,9 @@ if((!isset($_SESSION['cpf']) == true) and (!isset($_SESSION['senha']) == true)){
 $sql ="SELECT * FROM registros WHERE 1";
 $result = $conexao->query($sql);
 
+$dados = mysqli_fetch_assoc($result);
 
-
-
-
-#$data = date("d-m",strtotime($dadosLinha["data"]));
-
-#print_r($data);
+$result -> data_seek(0);
 
 ?>
 
@@ -87,7 +83,7 @@ $result = $conexao->query($sql);
                         <tr>
                             <th>Data</th>
                             <th>Hora de retirada</th>
-                            <th>Devolução</th>
+                            <th>Hora da Devolução</th>
                             <th>Professor</th>
                             <th>Carrinho/Quantidade</th>
                         </tr>
@@ -117,13 +113,27 @@ $result = $conexao->query($sql);
                     <h2 class="profName"><?php echo $_SESSION['nome']?></h2>
                     <h2 class="registroProf"><?php echo $_SESSION['cpf']?></h2>
                 </div>
+                            <?php
+                                if ($dados['nomeProf'] == $_SESSION['nome'] && $dados['devolvidoStat'] == 0){
+                                    echo "<div class='chrAlug' style='background-color: whitesmoke;'>";
+                                    echo "<h4 class='pendencia'> No dia ". date("d-m",strtotime($dados['data'])). " ficaram pendentes ". $dados['quantidade']. " chromebooks" . "</h4>" . "<br>";
+                                    echo "<a href='./login/redef.html'> Em caso de erros relate aqui </a>";
+                                    echo "</div>";
+                                }
+                            ?>
             </div>
             <div class="functions">
                 <button >Relatar problema em chromebook</button>
+                <?php
+                if($dados['nomeProf'] == $_SESSION['nome'] && $dados['devolvidoStat'] == 0){
+                    echo "<button>Devolver chromebook</button>";
+                }
+                ?>
                 <button id="require">Alugar chromebooks</button>
             </div>
         </div>
+        <button id="sairDeFininho" style="background-color:red;height:fit-content; z-index:99;">Sair</button>
     </div>
-    <img src="require/requisição.html" alt="">
 </body>
+<script src="script.js"></script>
 </html>

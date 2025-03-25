@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if((!isset($_SESSION['cpf']) == true) and (!isset($_SESSION['senha']) == true)){
+    unset($_SESSION['cpf']);
+    unset($_SESSION['senha']);
+    header('location:./login/login.html');
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pr-Br">
 <head>
@@ -8,25 +21,28 @@
 </head>
 <body>
     <div class="geral">
-        <form class="centro" action="" method="post">
+        <form class="centro" action="validationReq.php" method="post">
             <h1>Alugar Chromebooks</h1>
             <div class="inputs">
-                <input type="text" name="nomeP" placeholder=" ">
-                <label for="nomeP" class="label"> Digite seu nome </label>    
+                <input type="text" name="nomeP" placeholder=" " value="<?php echo $_SESSION['nome']?>" disabled>
+                <label for="nomeP" class="label">Nome </label>    
             </div>
             <div class="inputs">
-            <input type="text" name="quant" placeholder=" ">
-            <label for="senha" class="label"> Digite sua a quantidade de chromebooks</label>
+                <input type="text" name="quant" placeholder=" ">
+                <label for="senha" class="label"> Digite sua a quantidade de chromebooks</label>
             </div>
             <div class="inputs">
                 <input type="text" name="sala" id="" placeholder=" ">
                 <label for="sala">Sala em que serão utilizados</label>
             </div>
+            
+
+
 
             <button name="submit" value="submit" >Enviar pedido</button>
         </form>
     </div>
-
-    </form>
+    
+</form>
 </body>
 </html>

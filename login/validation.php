@@ -26,7 +26,7 @@
                 $_SESSION['nome'] = $nome;
                 $_SESSION['cpf'] = $cpf;
                 $_SESSION['senha'] = $senha;
-                header("location:../");
+                header("location:../index.php");
                 echo "foi";
             }
 
