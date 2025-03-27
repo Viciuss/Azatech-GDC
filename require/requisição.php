@@ -18,8 +18,10 @@ if((!isset($_SESSION['cpf']) == true) and (!isset($_SESSION['senha']) == true)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alugar chromebook</title>
     <link rel="stylesheet" href="../login/login.css">
+    <link rel="stylesheet" href="require.css">
 </head>
 <body>
+
     <div class="geral">
         <form class="centro" action="validationReq.php" method="post">
             <h1>Alugar Chromebooks</h1>
@@ -40,9 +42,12 @@ if((!isset($_SESSION['cpf']) == true) and (!isset($_SESSION['senha']) == true)){
 
 
             <button name="submit" value="submit" >Enviar pedido</button>
+
+            <button type="button" id="goBack">Voltar</button>
         </form>
     </div>
     
 </form>
 </body>
+<script src="./req.js"></script>
 </html>

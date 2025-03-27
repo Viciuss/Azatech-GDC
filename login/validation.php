@@ -2,22 +2,24 @@
     session_start();
     if(isset($_POST["submit"]) && !empty($_POST["cpf"]) && !empty($_POST["cpf"])){
         include_once('config.php');
+        
+        
+        $cpf = test_input($_POST["cpf"]);
+        
+        
+        $senha = test_input($_POST["senha"]);
+        
+        
+        $sql = "SELECT * FROM `login` WHERE cpf = $cpf and senha = '[$senha]'";
+        $result = $conexao ->query($sql);
+        
+        $dadosProf = mysqli_fetch_assoc($result);
+        
+        $nome = $dadosProf['nome'];
 
 
-            $cpf = test_input($_POST["cpf"]);
-
-
-            $senha = test_input($_POST["senha"]);
-
-
-            $sql = "SELECT * FROM `login` WHERE cpf = $cpf and senha = '[$senha]'";
-            $result = $conexao ->query($sql);
-
-            $dadosProf = mysqli_fetch_assoc($result);
-
-            $nome = $dadosProf['nome'];
-
-            if(mysqli_num_rows($result)< 1){
+        
+        if(mysqli_num_rows($result)< 1){
                 unset($_SESSION['cpf']);
                 unset($_SESSION['senha']);
                 header("location:./login.html");

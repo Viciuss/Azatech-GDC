@@ -99,6 +99,9 @@ $pendencia = false;
                                     $pendDia = date("d-m",strtotime($dadosLinha["data"]));
                                     $pendencia = true;
                                     $pendQuant = $dadosLinha['quantidade'];
+
+                                    $pendenciaArr = array($pendDia,$pendQuant);
+                                    $_SESSION['pendencia'] = $pendenciaArr;	
                                 }
                             }
                         ?>
@@ -128,8 +131,9 @@ $pendencia = false;
                 <button >Relatar problema em chromebook</button>
                 <?php
                 if($pendencia == true){
-                    echo "<button>Devolver chromebook</button>";
+                    echo '<button id="devolution">Devolver chromebook</button>';
                 }
+
                 ?>
                 <button id="require">Alugar chromebooks</button>
             </div>
