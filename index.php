@@ -75,6 +75,7 @@ $pendencia = false;
                 <table>
                     <thead>
                         <tr>
+                            <th>id</th>
                             <th>Data</th>
                             <th>Hora de retirada</th>
                             <th>Devolvido?</th>
@@ -88,6 +89,7 @@ $pendencia = false;
                             while($dadosLinha = mysqli_fetch_assoc($result)){
                                 $devolvidoStat = $dadosLinha['devolvidoStat'] == 0 ? "Não" : "Sim";
                                 echo "<tr>";
+                                    echo "<td>" . $dadosLinha["id"];
                                     echo "<td>". date("d-m",strtotime($dadosLinha["data"])) ."</td>";
                                     echo "<td>". $dadosLinha['horaRet'] ."</td>";
                                     echo "<td>". $devolvidoStat."</td>";
@@ -98,6 +100,7 @@ $pendencia = false;
                                 if($dadosLinha['nomeProf'] == $_SESSION['nome'] && $dadosLinha['devolvidoStat'] == 0){
                                     $pendDia = date("d-m",strtotime($dadosLinha["data"]));
                                     $pendencia = true;
+                                    $pendId = $dadosLinha['id'];
                                     $pendQuant = $dadosLinha['quantidade'];
 
                                     $pendenciaArr = array($pendDia,$pendQuant);
@@ -122,6 +125,7 @@ $pendencia = false;
                                     if ($pendencia == true){
                                         echo "<div class='chrAlug' style='background-color: whitesmoke;'>";
                                         echo "<h4 class='pendencia'> No dia ". $pendDia. " ficaram pendentes ". $pendQuant. " chromebooks" . "</h4>" . "<br>";
+                                        echo "<h4 class=pendencia > id do pedido: ". $pendId. "</h4>";
                                         echo "<a href='./login/redef.html'> Em caso de erros relate aqui </a>";
                                         echo "</div>";
                                     }

@@ -1,27 +1,118 @@
-.pends{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-
-
-
-.pendencia{
-    border: 2px solid red;
+body {
+    background-color: purple;
+    color: white;
+    font-family: Arial, sans-serif;
     text-align: center;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 5px 5px 10px black;
-    transition: 200ms;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    overflow-y: hidden;
 }
 
-.pendencia:hover{
+.container {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: whitesmoke;
+    margin:9% 10% ;
+    border-radius: 15px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: purple;
+}
+
+.carrossel-container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.carrossel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carrossel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    background-color:whitesmoke;
+    border: 2px solid purple;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 20px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+.carrossel-item a{
+    text-decoration: none;
+    color: purple;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.carousel-control-prev {
+    left: 0;
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.btn {
+    background-color: whitesmoke;
+    border: 2px solid purple;
+    padding: 10px 50px;
+    color: purple;
+    height: 10%;
+    width: 100%;
+    border-radius: 20px;
+    transition-duration: 200ms;
+    margin: .5%;
+}
+
+.btn-danger {
+    border: 2px solid red;
+}
+
+.btn:hover {
+    background-color: purple;
+    color: whitesmoke;
+    border: 0 none;
+    box-shadow: 2.5px 5px 5px black ;
     transform: scale(1.1);
 }
 
-.selected{
-    border-color: blue;
+.btn-danger:hover {
     background-color: red;
+    color: whitesmoke;
+    border: 0 none;
+    box-shadow: 2.5px 5px 5px black ;
+    transform: scale(1.1);
+}
+
+.btn:active{
+    transform: scale(1);
 }

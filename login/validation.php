@@ -4,13 +4,13 @@
         include_once('config.php');
         
         
-        $cpf = test_input($_POST["cpf"]);
+        $cpf =$_POST["cpf"];
         
         
-        $senha = test_input($_POST["senha"]);
+        $senha = $_POST["senha"];
         
         
-        $sql = "SELECT * FROM `login` WHERE cpf = $cpf and senha = '[$senha]'";
+        $sql = "SELECT * FROM `login` WHERE cpf = $cpf and senha = '$senha'";
         $result = $conexao ->query($sql);
         
         $dadosProf = mysqli_fetch_assoc($result);
@@ -19,10 +19,11 @@
 
 
         
-        if(mysqli_num_rows($result)< 1){
+        if(mysqli_num_rows($result)<= 0){
                 unset($_SESSION['cpf']);
                 unset($_SESSION['senha']);
                 header("location:./login.html");
+                $_SESSION['msg'] = "<p style='color: red;'>Erro: CPF ou senha incorretos</p>";
                 echo "nao foi";
             }else{
                 $_SESSION['nome'] = $nome;
