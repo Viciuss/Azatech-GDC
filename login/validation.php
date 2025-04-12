@@ -4,10 +4,10 @@
         include_once('config.php');
         
         
-        $cpf =$_POST["cpf"];
+        $cpf =test_input($_POST["cpf"]);
         
         
-        $senha = $_POST["senha"];
+        $senha =test_input($_POST["senha"]);
         
         
         $sql = "SELECT * FROM `login` WHERE cpf = $cpf and senha = '$senha'";
@@ -25,7 +25,7 @@
                 header("location:./login.html");
                 $_SESSION['msg'] = "<p style='color: red;'>Erro: CPF ou senha incorretos</p>";
                 echo "nao foi";
-            }else{
+            }else{      
                 $_SESSION['nome'] = $nome;
                 $_SESSION['cpf'] = $cpf;
                 $_SESSION['senha'] = $senha;
