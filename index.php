@@ -117,6 +117,7 @@ $pendencia = false;
                 <div>
                     <img class="foto" src="imgs/imgPlaceholder.png" alt="fotoProfessor">
                 </div>
+                
                 <div class="info">
                     <h2 class="profName"><?php echo $_SESSION['nome']?></h2>
                     <h2 class="registroProf"><?php echo $_SESSION['cpf']?></h2>
