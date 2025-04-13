@@ -25,7 +25,8 @@
                 header("location:./login.html");
                 $_SESSION['msg'] = "<p style='color: red;'>Erro: CPF ou senha incorretos</p>";
                 echo "nao foi";
-            }else{      
+            }else{
+                $_SESSION['hierarquia'] = $dadosProf['hierarquia'];
                 $_SESSION['nome'] = $nome;
                 $_SESSION['cpf'] = $cpf;
                 $_SESSION['senha'] = $senha;

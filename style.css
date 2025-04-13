@@ -4,7 +4,7 @@
 }
 
 body,html{
-    background-color: rgb(140, 10, 140);
+    background-color: #121312;
     height: 100%;
     overflow-y: hidden;
 }
@@ -31,7 +31,7 @@ body,html{
     cursor: pointer;
     transform: scale(1.1);
     transition: all 0.3s ease;
-    box-shadow: 0 0 25px 10px lime; 
+    box-shadow: 0 0 25px 10px #ad0013; 
 }
 .escondae:active{
     transform: scale(1);
@@ -105,7 +105,7 @@ body,html{
 .erp{
     display: flex;
     flex-direction: column;
-
+    
 
     text-align: center;
     justify-content: space-between;
@@ -117,45 +117,51 @@ body,html{
     flex-direction: column;
     margin: 5px;
     justify-content: space-between;
-    height: 25%;
+    height: 30%;
     border-radius: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
 
 }
 .functions button{
     background-color:whitesmoke;
-    height: 45%;
+    height: fit-content;
     border-radius: 10px;
     font-size: 15px;
     transition-duration: 200ms;
-    margin: 10 px;
+    margin: 10px 5px;
+    font-size: 20px;
+  
 
 }
 .functions button:nth-child(2):hover{
     box-shadow: 2.5px 5px 5px black;
     border: 0 none;
     transform: scale(1.1);
-    background-color: purple;
-    color: whitesmoke;
+    background-color: #a67d43;
+    color: #121312;
+    z-index: 99;
 }
 .functions button:nth-child(2){
     box-shadow: 2.5px 5px 5px black ;
-    border: 2px solid purple;
+    border: 2px solid #a67d43;
     background-color: whitesmoke;
-    color: purple;
+    color: #a67d43;
 }
 
 .functions button:nth-child(3):hover{
     box-shadow: 2.5px 5px 5px black;
     border: 0 none;
     transform: scale(1.1);
-    background-color: purple;
-    color: whitesmoke;
+    background-color: #a67d43;
+    color: #121312;
+    z-index: 99;
 }
 .functions button:nth-child(3){
     box-shadow: 2.5px 5px 5px black ;
-    border: 2px solid purple;
+    border: 2px solid #a67d43;
     background-color: whitesmoke;
-    color: purple;
+    color: #a67d43;
 }
 
 
@@ -166,17 +172,19 @@ body,html{
 
 .functions button:nth-child(1){
     box-shadow: 2.5px 5px 5px black ;
-    border: 2px solid red;
+    border: 2px solid #ad0013;
     background-color: whitesmoke;
-    color: red;
+    color: #ad0013;
+    font-size: 20px;
 }
 .functions button:nth-child(1):hover{
     box-shadow: 2.5px 5px 5px black ;
     border: 0 none;
     transform: scale(1.1);
-    background-color: red;
-    color: whitesmoke;
-    border:0 none ;
+    background-color: #ad0013;
+    color: #121312;
+    z-index: 99;
+
 }
 
 
@@ -193,7 +201,7 @@ body,html{
     border-bottom-right-radius: 25px;
 }
 .historico::-webkit-scrollbar-thumb{
-    background-color: purple;
+    background-color: #ad0013;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
@@ -220,11 +228,11 @@ body,html{
 
 .pendencia{
     padding: 10px;
-    color: red;
+    color: #ad0013;
 }
 
 .chrAlug{
-    border: 2px solid red;
+    border: 2px solid #ad0013;
     border-radius:10px;
     background-color: gray;
     box-shadow: 2.5px 5px 5px black;
@@ -235,8 +243,6 @@ body,html{
     color: purple;
 
 }
-
-
 
 .registro {
     width: 25%;
@@ -251,5 +257,4 @@ body,html{
     transform: translateX(-150%);
     width: 0;
     min-width: 0;
-
   }

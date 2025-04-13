@@ -1,5 +1,5 @@
 body {
-    background-color: purple;
+    background-color: #121312;
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -19,7 +19,7 @@ body {
 
 h1 {
     margin-bottom: 30px;
-    color: purple;
+    color: #ad0013;
 }
 
 .carrossel-container {
@@ -38,7 +38,7 @@ h1 {
     min-width: 100%;
     box-sizing: border-box;
     background-color:whitesmoke;
-    border: 2px solid purple;
+    border: 2px solid #ad0013;
     color: black;
     text-decoration: none;
     border-radius: 8px;
@@ -53,7 +53,7 @@ h1 {
 
 .carrossel-item a{
     text-decoration: none;
-    color: purple;
+    color: #ad0013;
 }
 
 .carousel-control-prev, .carousel-control-next {
@@ -83,9 +83,9 @@ h1 {
 
 .btn {
     background-color: whitesmoke;
-    border: 2px solid purple;
+    border: 2px solid #ad0013;
     padding: 10px 50px;
-    color: purple;
+    color: #ad0013;
     height: 10%;
     width: 100%;
     border-radius: 20px;
@@ -94,11 +94,11 @@ h1 {
 }
 
 .btn-danger {
-    border: 2px solid red;
+    border: 2px solid #ad0013;
 }
 
 .btn:hover {
-    background-color: purple;
+    background-color: #ad0013;
     color: whitesmoke;
     border: 0 none;
     box-shadow: 2.5px 5px 5px black ;
@@ -106,7 +106,7 @@ h1 {
 }
 
 .btn-danger:hover {
-    background-color: red;
+    background-color: #ad0013;
     color: whitesmoke;
     border: 0 none;
     box-shadow: 2.5px 5px 5px black ;

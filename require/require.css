@@ -4,7 +4,7 @@
 }
 
 html,body{
-    background-color: purple;
+    background-color: #121312;
     width: 100%;
     height: 100%;
     display:flex;
@@ -46,7 +46,7 @@ html,body{
     border: 0 none;
     height: 100%;
     width: 100%;
-    border-bottom: 2px solid purple;
+    border-bottom: 2px solid #ad0013;
     background-color: whitesmoke;
     transition-duration: 300ms;
     padding: 10px;
@@ -54,9 +54,9 @@ html,body{
 }
 .centro button{
     background-color: whitesmoke;
-    border: 2px solid purple;
+    border: 2px solid #ad0013;
     padding: 10px 50px;
-    color: purple;
+    color: #ad0013;
     height: 10%;
     width: 100%;
     border-radius: 20px;

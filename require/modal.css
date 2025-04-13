@@ -24,7 +24,7 @@
     background-color:lightslategray;
     border-radius: 15px;
     width: 50%;
-    color: black;
+    color: #121312;
   }
   
   .active {
@@ -67,11 +67,11 @@
   }
   
   .btnOK {
-   background-color: purple!important;
+   background-color: #a67d43!important;
   }
   
   .btnClose {
-    background-color: brown!important;
+    background-color: #ad0013!important;
    }
   
    @media (max-width: 500px) {

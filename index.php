@@ -22,27 +22,26 @@ $pendencia = false;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GDC</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="geral">
         <button type="button" onclick="escondae(this)" class="escondae"><img src="imgs/itanimulli.png" alt=""></button>
         <div class="registro ">
             <div class="top-panel">
+                
+                </div>
+                <div class="carregamento">
+                    <h1>Status de carregamento</h1>
+                </div>
 
+                
+                
             </div>
-        <div class="carregamento">
-            <h1>Status de carregamento</h1>
-        </div>
-
-
-
-        </div>
-        <div class="centro">
-            <div class="barraPesq">
-                <input type="text" name="pesquisa" id="pesquisae" placeholder="Pesquisar professor">
-                <button id="pesquis">Pesquisar</button>
-            </div>
+            <div class="centro">
+                <div class="barraPesq">
+                    <input type="text" name="pesquisa" id="pesquisae" placeholder="Pesquisar professor">
+                    <button id="pesquis">Pesquisar</button>
+                </div>
             <div id="histDia">
                 <select name="histDia" id="">
                     <?php
@@ -51,47 +50,47 @@ $pendencia = false;
                             date("d-m",strtotime($diaD['data']))."</option>";
                         }
                         $result->data_seek(0);
-                    ?>
+                        ?>
                     </select>
-                <button id="update">Pesq</button>
-            </div>
-            <div class="historico">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>Data</th>
-                            <th>Hora de retirada</th>
-                            <th>Devolvido?</th>
-                            <th>Hora da Devolução</th>
-                            <th>Professor</th>
-                            <th>Quantidade</th>
-                        </tr>
-                    </thead>
-                    <tbody id="histTable">
-                        <?php
+                    <button id="update">Pesq</button>
+                </div>
+                <div class="historico">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Data</th>
+                                <th>Hora de retirada</th>
+                                <th>Devolvido?</th>
+                                <th>Hora da Devolução</th>
+                                <th>Professor</th>
+                                <th>Quantidade</th>
+                            </tr>
+                        </thead>
+                        <tbody id="histTable">
+                            <?php
                             while($dadosLinha = mysqli_fetch_assoc($result)){
                                 $devolvidoStat = $dadosLinha['devolvidoStat'] == 0 ? "Não" : "Sim";
                                 echo "<tr>";
-                                    echo "<td>" . $dadosLinha["id"];
-                                    echo "<td>". date("d-m",strtotime($dadosLinha["data"])) ."</td>";
+                                echo "<td>" . $dadosLinha["id"];
+                                echo "<td>". date("d-m",strtotime($dadosLinha["data"])) ."</td>";
                                     echo "<td>". $dadosLinha['horaRet'] ."</td>";
                                     echo "<td>". $devolvidoStat."</td>";
                                     echo "<td>".$dadosLinha['horaDevo']."</td>";
                                     echo "<td>".$dadosLinha['nomeProf']."</td>";
                                     echo "<td>".$dadosLinha['quantidade']."</td>";
-                                echo "</tr>";
-                                if($dadosLinha['nomeProf'] == $_SESSION['nome'] && $dadosLinha['devolvidoStat'] == 0){
-                                    $pendDia = date("d-m",strtotime($dadosLinha["data"]));
-                                    $pendencia = true;
-                                    $pendId = $dadosLinha['id'];
-                                    $pendQuant = $dadosLinha['quantidade'];
-
-                                    $pendenciaArr = array($pendDia,$pendQuant);
-                                    $_SESSION['pendencia'] = $pendenciaArr;	
+                                    echo "</tr>";
+                                    if($dadosLinha['nomeProf'] == $_SESSION['nome'] && $dadosLinha['devolvidoStat'] == 0){
+                                        $pendDia = date("d-m",strtotime($dadosLinha["data"]));
+                                        $pendencia = true;
+                                        $pendId = $dadosLinha['id'];
+                                        $pendQuant = $dadosLinha['quantidade'];
+                                        
+                                        $pendenciaArr = array($pendDia,$pendQuant);
+                                        $_SESSION['pendencia'] = $pendenciaArr;	
+                                    }
                                 }
-                            }
-                        ?>
+                                ?>
                     </tbody>
                 </table>
             </div>
@@ -105,6 +104,21 @@ $pendencia = false;
                 <div class="info">
                     <h2 class="profName"><?php echo $_SESSION['nome']?></h2>
                     <h2 class="registroProf"><?php echo $_SESSION['cpf']?></h2>
+                    <h2 class="hierarquia"><?php 
+                        switch ($_SESSION['hierarquia']) {
+                            case 0:
+                                echo "Professor";
+                                break;
+                                case 1:
+                                    echo "Diretor";
+                                    break;
+                                    case 2:
+                                        echo "Nerd da TI";
+                                        break;
+                                        default:
+                                        echo "Erro";
+                        }
+                        ?></h2>
                 </div>
                             <?php
                                     if ($pendencia == true){
@@ -114,21 +128,27 @@ $pendencia = false;
                                         echo "<a href='./login/redef.html'> Em caso de erros relate aqui </a>";
                                         echo "</div>";
                                     }
-                            ?>
+                                    ?>
             </div>
             <div class="functions">
                 <button >Relatar problema em chromebook</button>
                 <?php
                 if($pendencia == true){
                     echo '<button id="devolution">Devolver chromebook</button>';
+                }else{
+                    echo "<button id='require'>Alugar chromebooks</button>";
                 }
-
+                if($_SESSION['hierarquia'] == 1 || $_SESSION['hierarquia'] == 2){
+                    echo '<button id="addProf">Adicionar professor</button>';
+                }
+                
+                
                 ?>
-                <button id="require">Alugar chromebooks</button>
             </div>
         </div>
-        <button id="sairDeFininho" style="background-color:red;height:fit-content; z-index:99;">Sair</button>
+        <button id="sairDeFininho" style="background-color:#ad0013;height:fit-content; z-index:99;">Sair</button>
     </div>
 </body>
+<link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 </html>
