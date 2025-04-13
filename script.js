@@ -35,10 +35,29 @@ function escondae(btn) {
       img.alt = "itanimulli";
     }
   }
+  const linhas = document.querySelectorAll('#histTable tr');
+
+  document.getElementById("pesquis").addEventListener("click", function() {
+    const nomeProf = document.getElementById("pesquisae").value.toLowerCase();
+
+    linhas.forEach(linha => {
+        const nomeNaLinha = linha.children[5].textContent.toLowerCase(); // Coluna do nome
+        if (nomeProf === "" || nomeNaLinha.includes(nomeProf)) {
+            linha.style.display = ''; // Mostra
+        } else {
+            linha.style.display = 'none'; // Esconde
+        }
+    });
+
+
+  })
+
+
+
+
 
   document.getElementById('update').addEventListener('click', function () {
     const dataSelecionada = document.getElementById('histD').value;
-    const linhas = document.querySelectorAll('#histTable tr');
 
     linhas.forEach(linha => {
         const dataNaLinha = linha.children[1].textContent.trim(); // Coluna da data
