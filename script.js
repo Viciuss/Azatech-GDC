@@ -1,6 +1,8 @@
 const alugChr = document.querySelector("#require")
 const sair = document.querySelector("#sairDeFininho")
-const devolver = document.querySelector("#devolution")    
+const devolver = document.querySelector("#devolution")
+const pesquisar = document.querySelector("#update")  
+const filtro = document.querySelector("#histD")
 
 
 if(alugChr){ 
@@ -33,3 +35,17 @@ function escondae(btn) {
       img.alt = "itanimulli";
     }
   }
+
+  document.getElementById('update').addEventListener('click', function () {
+    const dataSelecionada = document.getElementById('histD').value;
+    const linhas = document.querySelectorAll('#histTable tr');
+
+    linhas.forEach(linha => {
+        const dataNaLinha = linha.children[1].textContent.trim(); // Coluna da data
+        if (dataSelecionada === "" || dataNaLinha === dataSelecionada) {
+            linha.style.display = ''; // Mostra
+        } else {
+            linha.style.display = 'none'; // Esconde
+        }
+    });
+});

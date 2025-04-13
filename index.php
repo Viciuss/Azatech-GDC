@@ -43,12 +43,21 @@ $pendencia = false;
                     <button id="pesquis">Pesquisar</button>
                 </div>
             <div id="histDia">
-                <select name="histDia" id="">
-                    <?php
-                        while($diaD = $result->fetch_assoc()){
-                            echo "<option value='". date("d-m",strtotime($diaD['data'])). "'>".
-                            date("d-m",strtotime($diaD['data']))."</option>";
+                <select name="histDia" id="histD">
+                    <option value="">Mostrar tudo</option>
+                <?php
+                    
+                        $datas_exibidas = array(); // Array para guardar as datas já exibidas
+
+                        while($diaD = $result->fetch_assoc()) {
+                            $data_formatada = date("d-m", strtotime($diaD['data']));
+
+                            if (!in_array($data_formatada, $datas_exibidas)) {
+                                echo "<option value='" . $data_formatada . "'>" . $data_formatada . "</option>";
+                                $datas_exibidas[] = $data_formatada; // Adiciona a data ao array
+                            }
                         }
+
                         $result->data_seek(0);
                         ?>
                     </select>
@@ -107,16 +116,16 @@ $pendencia = false;
                     <h2 class="hierarquia"><?php 
                         switch ($_SESSION['hierarquia']) {
                             case 0:
-                                echo "Professor";
-                                break;
-                                case 1:
-                                    echo "Diretor";
-                                    break;
-                                    case 2:
-                                        echo "Nerd da TI";
-                                        break;
-                                        default:
-                                        echo "Erro";
+                            echo "Professor";
+                            break;
+                            case 1:
+                            echo "Diretor";
+                            break;
+                            case 2:
+                            echo "Nerd da TI";
+                            break;
+                            default:
+                            echo "Erro";
                         }
                         ?></h2>
                 </div>
