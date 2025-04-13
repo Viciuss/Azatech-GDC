@@ -8,6 +8,38 @@ body,html{
     height: 100%;
     overflow-y: hidden;
 }
+.escondae {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    z-index: 10;
+    margin: 10px;
+    flex-shrink: 0;
+}
+
+.escondae img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+.escondae:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 25px 10px lime; 
+}
+.escondae:active{
+    transform: scale(1);
+}
+
+
+
+
 .geral{
     display: flex;
     flex-direction:row ;
@@ -25,7 +57,7 @@ body,html{
 .centro{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     border-radius: 10px;
     box-shadow: 5px 10px 10px black;
 }
@@ -64,7 +96,8 @@ body,html{
 
 
 .geral .erp, .geral .registro{
-    width: 25%;
+    width: 50%;
+    max-width: fit-content;
     box-shadow: 5px 10px 10px black;
     border-radius: 10px;
 }
@@ -152,16 +185,6 @@ body,html{
     background-color: lightgrey;
     border-radius: 50%;
 }
-
-.registro{
-    display: flex;
-    flex-direction: column;
-    row-gap: 1%;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-
 .historico::-webkit-scrollbar{
     background-color: black;
     width: 5px;
@@ -176,21 +199,6 @@ body,html{
 }
 
 
-.registro .a{
-    margin: 5px;
-}
-.a select, .a button{
-    border-radius: 20px;
-}
-
-
-.regAlug{
-    display: flex;
-    flex-direction: column;
-    gap: 2%;
-    
-    height: fit-content;
-}
 .regAlug table, td, th{
     border: 1px solid black;
     border-collapse: separate;
@@ -210,11 +218,6 @@ body,html{
 
 }
 
-#tabela > tr{
-    width: 100%;
-}
-
-
 .pendencia{
     padding: 10px;
     color: red;
@@ -232,3 +235,21 @@ body,html{
     color: purple;
 
 }
+
+
+
+.registro {
+    width: 25%;
+    min-width: 250px;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .registro.saindo {
+    transform: translateX(-150%);
+    width: 0;
+    min-width: 0;
+
+  }

@@ -26,33 +26,17 @@ $pendencia = false;
 </head>
 <body>
     <div class="geral">
-        <div class="registro">
-            <div class="a">
-                <select name="selector" id="selectDia">
-                <?php
+        <button type="button" onclick="escondae(this)" class="escondae"><img src="imgs/itanimulli.png" alt=""></button>
+        <div class="registro ">
+            <div class="top-panel">
 
-                    ?>
-                </select>
-                <button id="regPesq">Pesq</button>
             </div>
-            <div class="regAlug" id="alug">
-                <table class="alug" style="width: 100%; align-items: center; text-align: center;">
-                    <thead >
-                        <tr>
-                            <th>Devolvido?</th>
-                            <th>Nome</th>
-                            <th>Quantidade</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabela" style="width: 100%; align-items: center; text-align: center;">
-                            <tr>
-                                <td>Não</td>
-                                <td>Placeholder Brabo</td>
-                                <td>20</td>
-                            </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="carregamento">
+            <h1>Status de carregamento</h1>
+        </div>
+
+
+
         </div>
         <div class="centro">
             <div class="barraPesq">

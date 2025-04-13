@@ -41,8 +41,8 @@
                         <button class="btnClose" type="button" onclick="closeModal()">Close</button>
                     </div>
                 </div>
+            </div>
         </div>
-    </div>
     
 
         <h1>Devolução</h1>
