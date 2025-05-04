@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar novo professor</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    
+    <div class="geral">
+        <form class="centro" action="../../../back-end/api/validation.php" method="post">
+            <h1>Cadastrar</h1>
+            <div class="inputs">
+                <input type="text" name="nome" placeholder=" ">
+                <label for="nome" class="label"> Digite o Nome do prof </label>    
+            </div>
+            <div class="inputs">
+                <input type="number" name="cpf" placeholder=" ">
+                <label for="cpf" class="label"> Digite o Cpf do prof </label>    
+            </div>
+            <div class="inputs">
+            <input type="password" name="senha" placeholder=" ">
+            <label for="senha" class="label"> Digite a senha do prof </label>
+            
+        </div>
+        <button name="submit" value="submit" >Cadastrar</button>
+        </form>
+    </div>
+
+
+
+
+</body>
+</html>
