@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de novo Professor</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <div class="centro">
+        <form class="profCadastro" action="cadastro.php" method="POST">
+            <h1>Cadastro de novo Professor</h1><br><br>
+
+            <div class="inputs">
+                <input type="text" id="nome" name="nome" placeholder=" " required>
+            <label for="nome">Nome:</label>
+            </div>
+
+            <div class="inputs">
+            <input type="cpf" id="cpf" name="cpf" placeholder=" " required>
+            <label for="cpf">Email:</label>
+            </div>
+
+
+            <div class="inputs">
+            <input type="password" id="senha" name="senha" placeholder=" " required>
+            <label for="senha">Senha:</label>
+            </div>
+            
+            
+            
+            <div class="inputs">
+                <select class="selectCargos" name="cargos" id="selectCargos">
+                    <option value="Selecione um cargo" selected>Selecione um cargo</option>
+                    <option value="0">Professor</option>
+                    <option value="1">Diretor</option>    
+                    <option value="2">Tecnico de TI</option>
+                </select>
+            </div>
+            
+            
+            <input type="submit" value="Cadastrar" class="btnCadastro">
+        </form>
+    </div>
+</body>
+</html>

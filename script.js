@@ -3,6 +3,7 @@ const sair = document.querySelector("#sairDeFininho")
 const devolver = document.querySelector("#devolution")
 const pesquisar = document.querySelector("#update")  
 const filtro = document.querySelector("#histD")
+const newProf = document.querySelector("#addProf")
 
 
 if(alugChr){ 
@@ -11,6 +12,11 @@ if(alugChr){
   })
 }
 
+if(newProf){
+newProf.addEventListener("click", () =>{
+    window.location.href = "login/cadastro/cadastro.html"
+})
+}
 
 sair.addEventListener("click", ()=>{
     window.location.href = "quit.php"
@@ -20,6 +26,11 @@ if(devolver){
         window.location.href = "require/devolver.php"
     })
   }
+
+
+
+
+  
 
 function escondae(btn) {
     const div = document.querySelector(".registro");
@@ -35,6 +46,14 @@ function escondae(btn) {
       img.alt = "itanimulli";
     }
   }
+
+
+
+
+
+
+
+
   const linhas = document.querySelectorAll('#histTable tr');
 
   document.getElementById("pesquis").addEventListener("click", function() {

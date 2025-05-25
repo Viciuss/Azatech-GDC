@@ -147,7 +147,7 @@ $pendencia = false;
                 }else{
                     echo "<button id='require'>Alugar chromebooks</button>";
                 }
-                if($_SESSION['hierarquia'] == 1 || $_SESSION['hierarquia'] == 2){
+                if($_SESSION['hierarquia'] >= 1){
                     echo '<button id="addProf">Adicionar professor</button>';
                 }
                 
