@@ -25,7 +25,7 @@ $pendencia = false;
 </head>
 <body>
     <div class="geral">
-        <button type="button" onclick="escondae(this)" class="escondae"><img src="imgs/itanimulli.png" alt=""></button>
+        <button type="button" onclick="escondae(this)" class="escondae" disabled><img src="imgs/itanimulli.png" alt=""></button>
         <div class="registro ">
             <div class="top-panel">
                 

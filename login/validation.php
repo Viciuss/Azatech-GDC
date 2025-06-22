@@ -35,7 +35,7 @@
             }
 
     }else{
-    header("location:./login/login.html");
+    header("location:login.html");
     }
     
     function test_input($test){

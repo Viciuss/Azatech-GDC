@@ -10,7 +10,7 @@
             $hora = date("H:i:s");
             $horaDevo = 0;
 
-            $sql = "INSERT INTO `registros`(`id`, `data`, `nomeProf`, `quantidade`, `horaRet`, `horaDevo`, `devolvidoStat`)VALUES ('','$data','$nomeDoBuxa','$quantidade','$hora','$horaDevo','0')";
+            $sql = "INSERT INTO `registros`(`data`, `nomeProf`, `quantidade`, `horaRet`, `horaDevo`, `devolvidoStat`)VALUES ('$data','$nomeDoBuxa','$quantidade','$hora','$horaDevo','0')";
 
             if ($conexao->query($sql) === TRUE) {
                 header("Location: ../index.php");
