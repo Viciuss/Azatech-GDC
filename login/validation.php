@@ -1,48 +1,41 @@
 <?php
-    session_start();
-    if(isset($_POST["submit"]) && !empty($_POST["cpf"]) && !empty($_POST["cpf"])){
-        include_once('config.php');
-        
-        
-        $cpf =test_input($_POST["cpf"]);
-        
-        
-        $senha =test_input($_POST["senha"]);
-        
-        
-        $sql = "SELECT * FROM `login` WHERE cpf = $cpf and senha = '$senha'";
-        $result = $conexao ->query($sql);
-        
-        $dadosProf = mysqli_fetch_assoc($result);
-        
-        $nome = $dadosProf['nome'];
+session_start();
 
+if (isset($_POST["submit"]) && !empty($_POST["cpf"]) && !empty($_POST["senha"])) {
+    include_once('config.php');
 
-        
-        if(mysqli_num_rows($result)<= 0){
-                unset($_SESSION['cpf']);
-                unset($_SESSION['senha']);
-                header("location:./login.html");
-                $_SESSION['msg'] = "<p style='color: red;'>Erro: CPF ou senha incorretos</p>";
-                echo "nao foi";
-            }else{
-                $_SESSION['hierarquia'] = $dadosProf['hierarquia'];
-                $_SESSION['nome'] = $nome;
-                $_SESSION['cpf'] = $cpf;
-                $_SESSION['senha'] = $senha;
-                header("location:../index.php");
-                echo "foi";
-            }
+    $cpf = test_input($_POST["cpf"]);
+    $senha = test_input($_POST["senha"]);
 
-    }else{
-    header("location:login.html");
-    }
-    
-    function test_input($test){
-        $test = trim($test);
-        $test = stripslashes($test);
-        $test = htmlspecialchars($test);
-        return $test;
+    $sql = "SELECT * FROM login WHERE cpf = ?";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("s", $cpf);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result && $result->num_rows > 0) {
+        $dadosProf = $result->fetch_assoc();
+        if (password_verify($senha, $dadosProf['senha'])) {
+            $_SESSION['hierarquia'] = $dadosProf['hierarquia'];
+            $_SESSION['nome'] = $dadosProf['nome'];
+            $_SESSION['cpf'] = $dadosProf['cpf'];
+            header("Location: ../index.php");
+            exit;
+        }
     }
 
+    $_SESSION['msg'] = "<p style='color: red;'>Erro: CPF ou senha incorretos</p>";
+    header("Location: ./login.html");
+    exit;
+} else {
+    header("Location: login.html");
+    exit;
+}
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 ?>
