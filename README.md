@@ -13,6 +13,7 @@ Este projeto tem como objetivo facilitar o **gerenciamento dos computadores** em
 ## 🧰 Tecnologias Utilizadas
 
 - **Backend:** PHP
+- **Bibliotecas:** JQuery + AJAX
 - **Frontend:** HTML + CSS + JS
 - **Banco de Dados:** MySQL
 - **Outros:** Git
