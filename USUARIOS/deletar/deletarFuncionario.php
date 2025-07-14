@@ -71,17 +71,20 @@ if (!isset($_SESSION['cpf']) || !isset($_SESSION['id']) || !isset($_SESSION['fun
                             $result = $connect->query($sql);
 
                             while($dadosLinha = mysqli_fetch_assoc($result)){
-                                echo "<tr>";
-                                echo "<td>" . $dadosLinha["IDFunc"] . "</td>";
-                                echo "<td>".$dadosLinha['nomeFunc']."</td>";
-                                echo "<td>".$dadosLinha['CPF']."</td>";
-                                echo "<td>".$dadosLinha['hierarquia']."</td>";
-                                echo "</tr>";
-                                
+                                if($dadosLinha["IDFunc"] != $_SESSION["id"]){
 
-                                $quantidadeFuncs++;
-                                if($dadosLinha['hierarquia'] == 'Professor'){
-                                    $quantidadeProfessores++;
+                                    echo "<tr>";
+                                    echo "<td>" . $dadosLinha["IDFunc"] . "</td>";
+                                    echo "<td>".$dadosLinha['nomeFunc']."</td>";
+                                    echo "<td>".$dadosLinha['CPF']."</td>";
+                                    echo "<td>".$dadosLinha['hierarquia']."</td>";
+                                    echo "</tr>";
+                                    
+                                    
+                                    $quantidadeFuncs++;
+                                    if($dadosLinha['hierarquia'] == 'Professor'){
+                                        $quantidadeProfessores++;
+                                    }
                                 }
                             }
                                 ?>

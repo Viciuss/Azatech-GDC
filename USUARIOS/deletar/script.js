@@ -1,3 +1,4 @@
+const voltar = document.querySelector("#voltarDeFininho");
 const linhas = document.getElementById("tabelaFuncionarios").querySelectorAll("tr");
 
 const idInput = document.querySelector("#idFunc");
@@ -5,8 +6,14 @@ const nomeInput = document.querySelector("#nomeFunc");
 const cpfInput = document.querySelector("#CPF");
 const hierarquiaInput = document.querySelector("#hierarquia");
 
-var dadosEnviados = new FormData()
+if (voltar) {
+  voltar.addEventListener("click", () => {
+    window.location.href = "../GerenciarUsuarios.php";
+  });
+}
 
+
+var dadosEnviados = new FormData()
 
 linhas.forEach(linha => {
   linha.addEventListener("click", function() {
@@ -129,13 +136,42 @@ function deletarFuncionario(){
 
 
 
-function atualizarTabela(dados){
+function atualizarTabela(dados) {
+  const tabela = document.getElementById("tabelaFuncionarios");
+  const corpo = tabela.querySelector("tbody");
 
-    console.log(dados)
-  
+
+  corpo.innerHTML = "";
 
 
+  dados.forEach(funcionario => {
+    const linha = document.createElement("tr");
+
+    funcionario.forEach(info => {
+      const celula = document.createElement("td");
+      celula.textContent = info;
+      linha.appendChild(celula);
+    });
+
+
+    linha.addEventListener("click", () => {
+      const [id, nome, cpf, hierarquia] = funcionario;
+
+
+      idInput.value = id;
+      nomeInput.value = nome;
+      cpfInput.value = cpf;
+      hierarquiaInput.value = hierarquia;
+
+
+      document.querySelectorAll("#tabelaFuncionarios tr").forEach(l => l.classList.remove("selecionado"));
+      linha.classList.add("selecionado");
+    });
+
+    corpo.appendChild(linha);
+  });
 }
+
 
 
 const pesquisarNome = document.querySelector("#pesquis")
