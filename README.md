@@ -22,12 +22,12 @@ Este projeto tem como objetivo facilitar o **gerenciamento dos computadores** em
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/nome-do-repo.git
+git clone https://github.com/seu-usuario/Azatech-GDC.git
 
 # Mova os arquivos para o diretório do seu servidor local:
-Exemplo (com XAMPP): C:/xampp/htdocs/nome-do-repo
+Exemplo (com XAMPP): C:/xampp/htdocs/Azatech-GDC
 
-# Inicie o servidor Apache e MySQL pelo painel do XAMPP
+# Inicie o servidor Apache pelo painel do XAMPP
 
 # Acesse no navegador:
-http://localhost/nome-do-repo
+http://localhost/Azatech-GDC/LOGIN/login.html
