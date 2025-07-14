@@ -1,9 +1,9 @@
 <?php
-    include_once("../login/config.php");
+    include_once("../LOGIN/validation/connect.php");
     session_start();
 
-    $sql = "SELECT * FROM registros WHERE devolvidoStat = 0";
-    $result = $conexao->query($sql);
+    $sql = "SELECT * FROM requisicoes INNER JOIN LoginFunc ON requisicoes.IDFunc = LoginFunc.IDFunc WHERE statusDevo = 0";
+    $result = $connect->query($sql);
     
     if((!isset($_SESSION['cpf']) == true) and (!isset($_SESSION['senha']) == true)){
         unset($_SESSION['cpf']);
@@ -51,12 +51,12 @@
                 <?php
                 $first = true;
                 while($devolvidos = mysqli_fetch_assoc($result)) {
-                    if($devolvidos["nomeProf"] == $_SESSION['nome']) {
+                    if($devolvidos["nomeFunc"] == $_SESSION['nome']) {
                         $activeClass = $first ? 'active' : '';
                         echo "<div style='color:black;'class='carrossel-item $activeClass'>";
-                        echo "<h4>No dia ". date("d-m",strtotime($devolvidos["data"])). " ficaram pendentes ". $devolvidos['quantidade']. " chromebooks</h4>";
-                        echo "<h4>ID do pedido: ". $devolvidos['id']. "</h4>";
-                        echo "<label><input type='radio' class='check' name='id' value=".$devolvidos["id"].">Selecionar</label><br>";
+                        echo "<h4>No dia ". date("d-m",strtotime($devolvidos["dataPedido"])). " ficaram pendentes ". $devolvidos['quantidade']. " chromebooks</h4>";
+                        echo "<h4>ID do pedido: ". $devolvidos['IDPedido']. "</h4>";
+                        echo "<label><input type='radio' class='check' name='id' value=".$devolvidos["IDPedido"].">Selecionar</label><br>";
                         echo "<a href='./login/redef.html' class='text-info'>Em caso de erros relate aqui</a>";
                         echo "</div>"; 
                         $first = false;

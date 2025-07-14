@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
-    <div class="centro">
+    <header>
+        <div class="logo">
+            <div class="placeholder"></div>
+        </div>
+        <h1>GDC</h1>
+        <button class="button" id="voltarDeFininho">Voltar</button>
+    </header>
+
+    <main class="centro">
         <form class="profCadastro" action="cadastro.php" method="POST">
             <h1>Cadastro de novo Professor</h1><br><br>
 
@@ -32,15 +40,16 @@
             <div class="inputs">
                 <select class="selectCargos" name="cargos" id="selectCargos">
                     <option value="Selecione um cargo" selected>Selecione um cargo</option>
-                    <option value="0">Professor</option>
-                    <option value="1">Diretor</option>    
-                    <option value="2">Tecnico de TI</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Diretor">Diretor</option>    
+                    <option value="TI">Tecnico de TI</option>
                 </select>
             </div>
             
             
             <input type="submit" value="Cadastrar" class="btnCadastro">
         </form>
-    </div>
+    </main>
 </body>
+<script src="script.js"></script>
 </html>

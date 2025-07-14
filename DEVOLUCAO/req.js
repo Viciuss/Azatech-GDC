@@ -4,6 +4,8 @@ const voltar = document.querySelector("#goBack")
 voltar.addEventListener("click", () => {
     window.location.href = "../INIT/gdc.php"
 })
+
+
 let currentIndex = 0;
 const items = document.querySelectorAll('.carrossel-item');
 const totalItems = items.length;

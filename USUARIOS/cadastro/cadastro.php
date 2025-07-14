@@ -3,9 +3,9 @@ session_start();
 if((!isset($_SESSION['cpf']) == true) and (!isset($_SESSION['senha']) == true)){
     unset($_SESSION['cpf']);
     unset($_SESSION['senha']);
-    header('location:./login/login.html');
+    header('location../../LOGIN/login.html');
 }else{
-    include_once('../config.php');
+    include_once('../../LOGIN/validation/connect.php');
 
     $nCPF = test_input($_POST["cpf"]);
     $nNome = test_input($_POST["nome"]);
@@ -14,22 +14,22 @@ if((!isset($_SESSION['cpf']) == true) and (!isset($_SESSION['senha']) == true)){
 
 
     // Verifica se o CPF já está cadastrado
-    $sqlCheck = "SELECT * FROM `login` WHERE cpf = '$nCPF'";
+    $sqlCheck = "SELECT * FROM LoginFunc WHERE CPF = $nCPF";
 
-    $resultCheck = $conexao->query($sqlCheck);
+    $resultCheck = $connect->query($sqlCheck);
 
     if ($resultCheck->num_rows > 0) {
         echo "CPF já cadastrado.";
     } else {
-        $senhaHash = password_hash($nSenha, PASSWORD_DEFAULT); // Hash da senha
+        $senhaHash = hash('sha256',$nSenha); // Hash da senha
 
 
-        $sql = "INSERT gdc.login (nome,cpf,senha,hierarquia) VALUES ('$nNome','$nCPF','$senhaHash','$nHierarquia')";
+        $sql = "INSERT LoginFunc (nomeFunc,CPF,senha,hierarquia) VALUES ('$nNome',$nCPF,'$senhaHash','$nHierarquia')";
 
-        if ($conexao->query($sql) === TRUE) {
-            header("Location: ../../index.php");
+        if ($connect->query($sql) === TRUE) {
+            header("Location: ../GerenciarUsuarios.php");
         } else {
-            echo "Error: " . $sql . "<br>" . $conexao->error;
+            echo "Error: " . $sql . "<br>" . $connect->error;
         }
     }
 

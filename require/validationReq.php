@@ -1,19 +1,18 @@
 <?php
     session_start();
     if(isset($_POST["submit"]) && !empty($_POST["quant"])){
-        include_once('../login/config.php');
+        include_once('../LOGIN/validation/connect.php');
             date_default_timezone_set("America/Sao_Paulo");
 
-            $nomeDoBuxa = $_SESSION['nome'];
             $quantidade = test_input($_POST['quant']);
             $data = date("Y-m-d");
             $hora = date("H:i:s");
-            $horaDevo = 0;
 
-            $sql = "INSERT INTO `registros`(`data`, `nomeProf`, `quantidade`, `horaRet`, `horaDevo`, `devolvidoStat`)VALUES ('$data','$nomeDoBuxa','$quantidade','$hora','$horaDevo','0')";
 
-            if ($conexao->query($sql) === TRUE) {
-                header("Location: ../index.php");
+            $sql = "INSERT INTO requisicoes(dataPedido, horaPedido, horaDevolucao, statusDevo,IDFunc, quantidade)VALUES ('$data', '$hora', '00:00:00', 0, '".$_SESSION['id']."', '$quantidade')";
+
+            if ($connect->query($sql) === TRUE) {
+                header("Location: ../INIT/gdc.php");
             } else {
                 echo "Error: " . $sql . "<br>" . $conexao->error;
             }

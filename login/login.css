@@ -3,7 +3,7 @@
 }
 
 body,html{
-    background-color: #121312;
+    background-color: var(--corFundo);
     height: 100%;
     align-items: center;
 }
@@ -38,19 +38,20 @@ body,html{
     border: 0 none;
 }
 .inputs input{
+    outline: none;
     border: 0 none;
-    height: 100%;
+    height: 50%;
     width: 100%;
-    border-bottom: 2px solid #ad0013;
+    border-bottom: 2px solid var(--corPrincipal);
     background-color: whitesmoke;
     transition-duration: 300ms;
-    padding: 10px;
+    padding: 15px;
     
 }
 
 
 .inputs input:focus{
-    background-color: #ad0014b2;
+    background-color: var(--corSecundaria);
     transform: scale(1.1);
     transition-duration: 300ms;
     border: 0 none;
@@ -59,20 +60,20 @@ body,html{
 }
 .inputs input:focus + label{
     translate: 0 -65px;
-    color:#ad0013;
+    color: var(--corPrincipal);
     transition-duration:300ms ;
     opacity: 100%;
     animation-fill-mode: forwards;
 }
 .inputs input:not(:placeholder-shown){
-    background-color: #ad0014b2;
+    background-color: var(--corSecundaria);
     transform: scale(1.1);
     box-shadow: 5px 7px 5px black ;
 }
 
 .inputs input:not(:placeholder-shown) + label {
     translate: 0 -65px;
-    color:#ad0013;
+    color: var(--corPrincipal);
     opacity: 100%;
 }
 
@@ -93,9 +94,9 @@ body,html{
 
 .centro button{
     background-color: whitesmoke;
-    border: 2px solid #ad0013;
+    border: 2px solid var(--corPrincipal);
     padding: 10px 50px;
-    color: #ad0013;
+    color: var(--corPrincipal);
     height: 10%;
     width: 100%;
     border-radius: 20px;
@@ -103,7 +104,7 @@ body,html{
 }
 
 .centro button:hover{
-    background-color: #ad0013;
+    background-color: var(--corPrincipal);
     color: whitesmoke;
     border: 0 none;
     box-shadow: 2.5px 5px 5px black ;
@@ -111,4 +112,12 @@ body,html{
 }
 .centro button:active{
     transform: scale(1);
+}
+
+
+:root{
+    --corPrincipal: #ad0013;
+    --corSecundaria: #ad0014b2;
+    --corFundo: #121312;
+    --corTerciaria:#a67d43;
 }
