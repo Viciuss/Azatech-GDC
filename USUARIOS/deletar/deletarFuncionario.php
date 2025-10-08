@@ -67,7 +67,7 @@ if (!isset($_SESSION['cpf']) || !isset($_SESSION['id']) || !isset($_SESSION['fun
                         $quantidadeFuncs = 0;
                         $quantidadeProfessores = 0;
 
-                            $sql ="SELECT * FROM LoginFunc";
+                            $sql ="SELECT * FROM loginFunc";
                             $result = $connect->query($sql);
 
                             while($dadosLinha = mysqli_fetch_assoc($result)){

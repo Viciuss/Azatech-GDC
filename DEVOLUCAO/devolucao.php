@@ -2,7 +2,7 @@
     include_once("../LOGIN/validation/connect.php");
     session_start();
 
-    $sql = "SELECT * FROM requisicoes INNER JOIN LoginFunc ON requisicoes.IDFunc = LoginFunc.IDFunc WHERE statusDevo = 0";
+    $sql = "SELECT * FROM requisicoes INNER JOIN loginFunc ON requisicoes.IDFunc = loginFunc.IDFunc WHERE statusDevo = 0";
     $result = $connect->query($sql);
     
     if((!isset($_SESSION['cpf']) == true) and (!isset($_SESSION['senha']) == true)){

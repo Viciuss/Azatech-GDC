@@ -46,9 +46,7 @@ body,html{
     background-color: whitesmoke;
     transition-duration: 300ms;
     padding: 15px;
-    
 }
-
 
 .inputs input:focus{
     background-color: var(--corSecundaria);
@@ -121,3 +119,43 @@ body,html{
     --corFundo: #121312;
     --corTerciaria:#a67d43;
 }
+
+
+/* ======== MOBILE ======== */
+@media (max-width: 800px) {
+    body {
+        padding: 10px; /* 👈 cria uma margem leve nas bordas */
+        box-sizing: border-box;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .menu, .erp, .login-box, .centro {
+        width: 95%; /* ocupa quase tudo, mas com um espacinho nas laterais */
+        margin: 10px 0;
+    }
+
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    header button {
+        margin: 10px 0;
+        width: 80%;
+    }
+
+    input {
+        font-size: 16px;
+    }
+  .inputs label {
+    translate: 15px -35px;
+  }
+}
+

@@ -9,12 +9,14 @@
             $hora = date("H:i:s");
 
 
-            $sql = "INSERT INTO requisicoes(dataPedido, horaPedido, horaDevolucao, statusDevo,IDFunc, quantidade)VALUES ('$data', '$hora', '00:00:00', 0, '".$_SESSION['id']."', '$quantidade')";
+            $sql = "INSERT INTO requisicoes (dataPedido, horaPedido, horaDevo, quantidade, statusDevo, IDFunc) 
+        VALUES ('$data', '$hora', '00:00:00', '$quantidade', '0', " . $_SESSION['id'] . ")";
+
 
             if ($connect->query($sql) === TRUE) {
                 header("Location: ../INIT/gdc.php");
             } else {
-                echo "Error: " . $sql . "<br>" . $conexao->error;
+                echo "Error: " . $sql . "<br>" . $connect->error;
             }
             
 

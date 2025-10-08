@@ -1,19 +1,22 @@
-*{
+/* ===== RESET ===== */
+* {
     padding: 0;
     margin: 0;
 }
 
-* input{
-    outline:none;
+* input {
+    outline: none;
 }
 
-body,html{
+/* ===== BODY E HTML ===== */
+body, html {
     background-color: var(--corFundo);
     height: 100%;
     overflow-x: hidden;
 }
 
-header{
+/* ===== HEADER ===== */
+header {
     width: 100%;
     height: 80px;
     background-color: whitesmoke;
@@ -24,10 +27,9 @@ header{
     font-size: 24px;
     position: static;
     z-index: 999;
-
 }
 
-header button{
+header button {
     width: 100px;
     height: 50px;
     background-color: var(--corPrincipal);
@@ -40,16 +42,18 @@ header button{
     position: relative;
 }
 
-main{
+/* ===== MAIN ===== */
+main {
     display: flex;
-    flex-direction:row ;
+    flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
     width: 100%;
     height: 100%;
 }
 
-.menu{
+/* ===== MENU ===== */
+.menu {
     width: 200px;
     height: 100%;
     position: relative;
@@ -64,7 +68,8 @@ main{
     z-index: 5;
 }
 
-.erp{
+/* ===== ERP ===== */
+.erp {
     width: 25%;
     display: flex;
     flex-direction: column;
@@ -72,7 +77,9 @@ main{
     text-align: center;
     gap: 25px;
 }
-.infoPerf{
+
+/* ===== PERFIL ===== */
+.infoPerf {
     width: 100%;
     height: 75%;
     display: flex;
@@ -81,7 +88,8 @@ main{
     padding: 25px;
 }
 
-.pendencia{
+/* ===== PENDÊNCIA ===== */
+.pendencia {
     border: 2px solid var(--corPrincipal);
     color: var(--corPrincipal);
     border-radius: 25px;
@@ -89,16 +97,16 @@ main{
     padding: 5px;
 }
 
-
-.functions{
+/* ===== FUNÇÕES ===== */
+.functions {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
-.functions button{
+
+.functions button {
     width: 100%;
     height: 100%;
     background-color: whitesmoke;
@@ -106,47 +114,44 @@ main{
     font-size: 18px;
     margin-bottom: 15px;
     cursor: pointer;
-
 }
 
-.button:hover{
+.button:hover {
     border: 0 none;
     transform: scale(1.1);
     transition: all 0.2s ease-in-out;
     box-shadow: 2.5px 5px 5px black;
 }
 
-.tipoUm{
+.tipoUm {
     border: 2px solid var(--corPrincipal);
     color: var(--corPrincipal);
 }
 
-.tipoUm:hover{
-    background-color:var(--corPrincipal);
+.tipoUm:hover {
+    background-color: var(--corPrincipal);
     color: whitesmoke;
 }
 
-.tipoDois{
+.tipoDois {
     border: 2px solid var(--corTerciaria);
     color: var(--corTerciaria);
 }
 
-.tipoDois:hover{
-    background-color:var(--corTerciaria);
+.tipoDois:hover {
+    background-color: var(--corTerciaria);
     color: whitesmoke;
 }
 
-.button:active{
+.button:active {
     border: 0 none;
     transform: scale(0.9);
     transition: all 0.2s ease-in-out;
     box-shadow: 2.5px 5px 5px black;
 }
 
-
-
-
-.imgPerf{
+/* ===== IMAGEM PERFIL ===== */
+.imgPerf {
     border-radius: 50%;
     height: 100px;
     min-height: 100px;
@@ -161,14 +166,15 @@ main{
     padding: 0;
 }
 
-.imgPerf .cabeca{
+.imgPerf .cabeca {
     background-color: whitesmoke;
     border-radius: 50%;
     width: 25px;
     height: 25px;
-    margin-top:10px ;
+    margin-top: 10px;
 }
-.imgPerf .corpo{
+
+.imgPerf .corpo {
     background-color: whitesmoke;
     width: 50px;
     height: 55%;
@@ -178,25 +184,22 @@ main{
     margin-top: 10px;
 }
 
-
-
-.wms{
+/* ===== WMS ===== */
+.wms {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-
-
-
-.pesquisa{
+/* ===== PESQUISA ===== */
+.pesquisa {
     display: flex;
     flex-direction: row;
     margin: 15px;
     width: 100%;
 }
 
-.pesquisa input{
+.pesquisa input {
     position: static;
     outline: none;
     border: 0 none;
@@ -208,15 +211,15 @@ main{
     padding: 15px;
 }
 
-.pesquisa input:focus{
+.pesquisa input:focus {
     background-color: var(--corSecundaria);
     transform: scale(1.002);
     transition-duration: 300ms;
-    box-shadow: 5px 7px 5px black ;
+    box-shadow: 5px 7px 5px black;
     text-decoration: none;
 }
 
-.pesquisa .button{
+.pesquisa .button {
     position: static;
     height: 100%;
     border-radius: 25px;
@@ -224,15 +227,12 @@ main{
     margin-left: 15px;
 }
 
-
-
-
-
-.tabelaHistorico{
+/* ===== TABELA HISTÓRICO ===== */
+.tabelaHistorico {
     width: 100%;
-
 }
-.tabelaHistorico table{
+
+.tabelaHistorico table {
     width: 100%;
     height: 100%;
     margin-top: 5%;
@@ -241,17 +241,118 @@ main{
     justify-content: center;
 }
 
-.tabelaHistorico table,th,td{
+.tabelaHistorico table, th, td {
     border: 1px solid black;
     align-items: center;
     justify-content: center;
 }
 
-
-
-:root{
+/* ===== VARIÁVEIS ===== */
+:root {
     --corPrincipal: #ad0013;
     --corSecundaria: #ad0014b2;
     --corFundo: #121312;
-    --corTerciaria:#01344f;
+    --corTerciaria: #01344f;
+}
+
+
+/* ===== MOBILE (<768px) ===== */
+@media only screen and (max-width: 768px) {
+
+    /* Header: empilhado e centralizado */
+    header {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    header button {
+        width: 90%;
+        max-width: 200px;
+        height: 40px;
+        font-size: 16px;
+        margin-right: 0;
+    }
+
+    /* Main: empilhado */
+    main {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        height: auto;
+    }
+
+    /* Menu e ERP: full width */
+    .menu, .erp {
+        width: 95%;
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    /* ERP: centralizado */
+    .erp {
+        text-align: center;
+    }
+
+    /* Funções: botões menores e empilhados */
+    .functions button {
+        width: 100%;
+        height: auto;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    /* Pesquisa: input e botão empilhados */
+    .pesquisa {
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0;
+    }
+
+    .pesquisa input {
+        width: 100%;
+    }
+
+    .pesquisa .button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Imagem do perfil menor */
+    .imgPerf {
+        width: 80px;
+        height: 80px;
+    }
+
+    .imgPerf .cabeca {
+        width: 20px;
+        height: 20px;
+    }
+
+    .imgPerf .corpo {
+        width: 40px;
+        height: 50%;
+    }
+
+    /* Tabela: rolável horizontal */
+    .tabelaHistorico {
+        overflow-x: auto;
+    }
+
+    .tabelaHistorico table {
+        min-width: 300px;
+    }
+
+    /* Pendência: fonte menor */
+    .pendencia {
+        font-size: 12px;
+        padding: 5px;
+    }
+
 }

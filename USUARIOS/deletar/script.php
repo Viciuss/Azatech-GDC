@@ -11,7 +11,7 @@ if (!isset($_POST["confirm"]) || $_POST["confirm"] !== "true") {
 include_once("../../LOGIN/validation/connect.php");
 
 function atualizarTabela($conexao) {
-    $queryAt = "SELECT * FROM LoginFunc";
+    $queryAt = "SELECT * FROM loginFunc";
     $result = $conexao->query($queryAt);
     $resultado = [];
 
@@ -40,7 +40,7 @@ if (!$id || !$nome || !$cpf || !$hierarquia) {
 }
 
 
-$stmt = $connect->prepare("DELETE FROM LoginFunc WHERE IDFunc=? AND nomeFunc=? AND CPF=? AND hierarquia=?");
+$stmt = $connect->prepare("DELETE FROM loginFunc WHERE IDFunc=? AND nomeFunc=? AND CPF=? AND hierarquia=?");
 $stmt->bind_param("isss", $id, $nome, $cpf, $hierarquia);
 $stmt->execute();
 

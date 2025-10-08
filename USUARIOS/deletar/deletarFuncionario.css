@@ -292,3 +292,115 @@ main{
     --corFundo: #121312;
     --corTerciaria:#01344f;
 }
+
+
+@media (max-width: 800px) {
+
+
+    header {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        width: 100vw;          /* faz o header ocupar toda a largura da tela */
+        margin-left: -15px;     /* "puxa" o header para alinhar com a borda da tela */
+        margin-right: -15px;    /* garante alinhamento na direita */
+        padding: 10px;          /* mantém o espaçamento interno */
+        box-sizing: border-box;
+    }
+  header h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  header button {
+    width: 90%;
+    max-width: 200px;
+    height: 40px;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+
+  /* Body padding */
+  body {
+    padding: 0 15px 15px 15px;
+    box-sizing: border-box;
+  }
+
+  /* Main layout */
+  main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  /* Boxes */
+  .menu, .delete, .funcionarios {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  }
+
+  /* Títulos */
+  .delete h3, .funcionarios h2 {
+    text-align: center;
+  }
+
+  /* Pesquisa */
+  .pesquisa {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pesquisa input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .pesquisa .button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Tabela de funcionários */
+  .tabelaFuncionarios {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .tabelaFuncionarios table {
+    width: 100%;
+    font-size: 14px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: center;
+  }
+
+  /* Inputs formulário deletar */
+  .inputs input {
+    width: 95%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .formularioDeletar button {
+    width: 95%;
+    height: auto;
+    font-size: 16px;
+  }
+
+  /* Botões gerais */
+  .funcoes button {
+    width: 95%;
+    font-size: 16px;
+  }
+}
+

@@ -14,7 +14,7 @@ if((!isset($_SESSION['cpf']) == true) and (!isset($_SESSION['senha']) == true)){
 
 
     // Verifica se o CPF já está cadastrado
-    $sqlCheck = "SELECT * FROM LoginFunc WHERE CPF = $nCPF";
+    $sqlCheck = "SELECT * FROM loginFunc WHERE CPF = $nCPF";
 
     $resultCheck = $connect->query($sqlCheck);
 
@@ -24,7 +24,7 @@ if((!isset($_SESSION['cpf']) == true) and (!isset($_SESSION['senha']) == true)){
         $senhaHash = hash('sha256',$nSenha); // Hash da senha
 
 
-        $sql = "INSERT LoginFunc (nomeFunc,CPF,senha,hierarquia) VALUES ('$nNome',$nCPF,'$senhaHash','$nHierarquia')";
+        $sql = "INSERT loginFunc (nomeFunc,CPF,senha,hierarquia) VALUES ('$nNome',$nCPF,'$senhaHash','$nHierarquia')";
 
         if ($connect->query($sql) === TRUE) {
             header("Location: ../GerenciarUsuarios.php");

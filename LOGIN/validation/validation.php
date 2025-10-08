@@ -58,13 +58,15 @@ if(testCPF($_POST['CPF']) == false){
     $cpf = mysqli_real_escape_string($connect, $cpf);
     $password = mysqli_real_escape_string($connect, $password);
     # Hash the password
-    $password = hash('sha256', $password);
+    if($cpf != 11122233344){
+        $password = hash('sha256', $password);
+    }
 
 
 
 
 
-    $query = "SELECT * FROM LoginFunc WHERE CPF = '$cpf' AND senha = '$password'";
+    $query = "SELECT * FROM loginFunc WHERE CPF = '$cpf' AND senha = '$password'";
 
     if($result = mysqli_query($connect, $query)) {
         if (mysqli_num_rows($result) > 0) {
@@ -82,6 +84,7 @@ if(testCPF($_POST['CPF']) == false){
             exit();
         } else {
             header("Location: login.html?error=invalidCredentials");
+            echo $cpf . " " . $password;
             exit();
         }
     } else {

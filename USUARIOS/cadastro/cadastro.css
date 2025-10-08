@@ -169,3 +169,66 @@ main{
     --corFundo: #121312;
     --corTerciaria:#01344f;
 }
+
+
+@media (max-width: 800px) {
+
+  /* Header */
+      header {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        width: 100vw;          /* faz o header ocupar toda a largura da tela */
+        margin-left: -15px;     /* "puxa" o header para alinhar com a borda da tela */
+        margin-right: -15px;    /* garante alinhamento na direita */
+        padding: 10px;          /* mantém o espaçamento interno */
+        box-sizing: border-box;
+    }
+
+  header button {
+    width: 90%;
+    max-width: 200px;
+    height: 40px;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+
+  /* Main layout */
+  main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    gap: 20px;
+    margin-top: 15%;
+  }
+
+  /* ProfCadastro */
+  .profCadastro {
+    width: 100%;
+    height: auto;
+    padding: 5%;
+    margin: 2% 0;
+  }
+
+  /* Inputs */
+  .inputs input, .selectCargos {
+    width: 95%;
+    height: auto;
+    padding: 12px;
+    margin: 5%;
+    font-size: 16px;
+  }
+
+  .inputs label {
+    translate: 15px -35px;
+  }
+
+  /* Botões */
+  .btnCadastro {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
+

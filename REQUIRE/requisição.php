@@ -17,7 +17,7 @@ if((!isset($_SESSION['cpf']) == true) and (!isset($_SESSION['senha']) == true)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alugar chromebook</title>
-    <link rel="stylesheet" href="../login/login.css">
+    <link rel="stylesheet" href="../LOGIN/login.css">
     <link rel="stylesheet" href="require.css">
 </head>
 <body>

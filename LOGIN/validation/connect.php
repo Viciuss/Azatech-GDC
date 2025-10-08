@@ -2,8 +2,8 @@
 
 $db = "gdc";
 $host = "localhost";
-$user="root";
-$password = "12323";
+$user="admin";
+$password = "1234";
 
 $connect = mysqli_connect($host, $user, $password, $db);
 

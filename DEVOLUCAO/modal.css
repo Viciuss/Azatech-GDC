@@ -1,13 +1,17 @@
 
   
-  .modal-container {
-    width: 100vw;
-    position: fixed;
-    top: 30px;
-    display: none;
-    z-index: 999;
-    left: 22.5%;
-  }
+.modal-container {
+  width: 100vw;
+  height: 100vh; /* garante que cubra a tela toda */
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 999;
+  justify-content: center;
+  align-items: flex-start; /* deixa ele um pouco abaixo do topo */
+  padding-top: 30px; /* o mesmo efeito do top anterior */
+}
 
   .fundo-texto{
     background-color: rgb(255, 255, 255);
@@ -71,22 +75,22 @@
   .btnClose {
     background-color: var(--corPrincipal)!important;
    }
-  
-   @media (max-width: 500px) {
-    .modal {
-      padding: 10px;
-      width: 80%;
-    }   
-  
-    span, .btns button {
-      font-size: smaller;
-    }
-   }
-
-
-   :root{
+  :root {
     --corPrincipal: #ad0013;
     --corSecundaria: #ad0014b2;
     --corFundo: #121312;
-    --corTerciaria:#01344f;
+    --corTerciaria: #01344f;
+}
+
+
+@media (max-width: 768px) {
+  .modal {
+    padding: 15px;
+    width: 90%;        /* mais estreito */
+    margin: 0 10px;    /* 👈 espaço lateral nas bordas */
+  }
+
+  span, .btns button {
+    font-size: smaller;
+  }
 }
